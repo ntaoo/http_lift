@@ -1,0 +1,16 @@
+name: http_lift
+description: A http browser client with its middleware.
+version: 0.0.1
+author: ntaoo <ntaoo.g@gmail.com>
+homepage: https://github.com/ntaoo/http_lift
+
+environment:
+  sdk: '>=1.10.0 <2.0.0'
+
+dependencies:
+  cookies: "^0.0.3"
+  http: "^0.11.3"
+  http_exception: "^0.1.0"
+
+dev_dependencies:
+  test: '>=0.12.0 <0.13.0'

@@ -1,6 +1,6 @@
 name: http_lift
 description: A http browser client with its middleware.
-version: 0.0.1
+version: 0.0.2
 author: ntaoo <ntaoo.g@gmail.com>
 homepage: https://github.com/ntaoo/http_lift
 

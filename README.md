@@ -27,9 +27,12 @@ A simple usage example:
     import 'package:angular2/core.dart';
     import 'package:http_lift/http_lift.dart' as lift;
 
+    // The opaque token needs to satisfy DI with factory provider.
+    const handler = const OpaqueToken('Handler');
+
     @Injectable()
     class LiftClient extends lift.LiftClient {
-      LiftClient(lift.Handler handler) : super(handler);
+      LiftClient(@Inject(handler) handler) : super(handler);
     }
 
 #### Extends Middleware that needs DI.
@@ -70,9 +73,9 @@ A simple usage example:
 
     const List resourceProviders = const [
       HttpExceptionEvents,
-      const Provider(Handler,
+      const Provider(handler,
           useFactory: handlerFactory, deps: const [HttpExceptionEvents]),
-      const Provider(LiftClient, useClass: LiftClient, deps: const [Handler]),
+      const Provider(LiftClient, useClass: LiftClient),
       const Provider(FooResource,
           useClass: FooResource, deps: const [LiftClient]),
     ];

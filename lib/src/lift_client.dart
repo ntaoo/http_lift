@@ -11,7 +11,7 @@ class LiftClient {
   Handler _handler;
 
   LiftClient([Handler _handler])
-      : this._handler = _handler ?? new SendRequest();
+      : _handler = _handler == null ? new SendRequest() : _handler;
 
   Future<Response> get(String url) =>
       _handleRequest(new Request(Method.get, url));

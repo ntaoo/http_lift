@@ -8,5 +8,5 @@ class Request<T> {
   T body;
 
   Request(this.method, this.url, {headers, this.body})
-      : this.headers = headers ?? {};
+      : headers = headers == null ? {} : headers;
 }
